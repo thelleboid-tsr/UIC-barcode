@@ -1,0 +1,20 @@
+{
+  "name": "uic-barcode",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Implementation of FCB barcode for rail tickets as specified in the IRS 90918-9.",
+  "scripts": {
+    "generate": "npx tsx scripts/generate-dosipas-tickets.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://local_proxy@127.0.0.1:38391/git/thelleboid-tsr/UIC-barcode"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dosipas-ts": "^1.5.0",
+    "tsx": "^4.21.0"
+  }
+}
