@@ -186,3 +186,7 @@ local.properties
 .classpath
 /ticket.api.test/
 /ticket.test.api/
+
+# Node.js
+node_modules/
+tickets.csv
