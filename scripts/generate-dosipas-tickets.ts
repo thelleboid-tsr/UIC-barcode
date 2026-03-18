@@ -93,6 +93,7 @@ for (let i = 0; i < count; i++) {
   if (railData) {
     // Update issuing details
     if (railData.issuingDetail) {
+      railData.issuingDetail.securityProviderNum = 9999;
       railData.issuingDetail.issuingYear = issuingYear;
       railData.issuingDetail.issuingDay = issuingDay;
       railData.issuingDetail.issuingTime = issuingTime;
@@ -102,12 +103,24 @@ for (let i = 0; i < count; i++) {
     // Remove traveler detail
     delete railData.travelerDetail;
 
-    // Set referenceNum on transport documents
+    // Modify transport documents
     if (railData.transportDocument) {
       for (const doc of railData.transportDocument) {
         const ticketValue = doc.ticket?.value;
         if (ticketValue) {
           ticketValue.referenceNum = i;
+          ticketValue.productIdNum = 55;
+          ticketValue.price = 4200;
+          delete ticketValue.extension;
+          ticketValue.validRegion = [
+            {
+              key: 'zones',
+              value: {
+                stationCodeTable: 'stationUIC',
+                city: 250065,
+              },
+            },
+          ];
         }
       }
     }
